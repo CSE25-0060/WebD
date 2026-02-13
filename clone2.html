@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAVANA – Women’s Luxury Edit</title>
+
+<style>
+:root{
+  --pink:#f6c1d1;
+  --rose:#e89ab1;
+  --gold:#d4af37;
+  --bg:#fff6fa;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:#333;
+}
+
+/* NAVBAR */
+header{
+  background:white;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 1.5rem;
+}
+
+.logo{
+  font-size:1.6rem;
+  font-weight:600;
+  color:var(--rose);
+}
+
+.nav-links{
+  display:flex;
+  gap:1.2rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+}
+
+.menu{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+  url("https://images.unsplash.com/photo-1520975916090-3105956dac38") center/cover;
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{
+  font-size:3rem;
+}
+
+.hero p{
+  margin:1rem 0;
+}
+
+.hero button{
+  padding:.9rem 2.2rem;
+  border:none;
+  border-radius:25px;
+  background:var(--gold);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* SECTION */
+section{
+  padding:3rem 1.5rem;
+}
+
+section h2{
+  text-align:center;
+  margin-bottom:2rem;
+  color:var(--rose);
+}
+
+/* PRODUCTS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:1rem;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.07);
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.card h4{
+  margin:.8rem 0;
+  font-size:1rem;
+}
+
+.price{
+  color:var(--gold);
+  font-weight:600;
+}
+
+.card button{
+  margin-top:.6rem;
+  padding:.6rem 1.4rem;
+  border:none;
+  border-radius:20px;
+  background:var(--rose);
+  color:white;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:white;
+  padding:1.5rem;
+  text-align:center;
+  color:#777;
+}
+
+/* RESPONSIVE NAV */
+@media(max-width:768px){
+  .nav-links{
+    position:absolute;
+    top:65px;
+    right:0;
+    background:white;
+    flex-direction:column;
+    width:200px;
+    display:none;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+  }
+  .nav-links.active{
+    display:flex;
+  }
+  .menu{
+    display:block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">SAVANA</div>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="nav">
+      <a href="#clothing">Clothing</a>
+      <a href="#bags">Handbags</a>
+      <a href="#makeup">Makeup</a>
+      <a href="#heels">Heels</a>
+      <a href="#jewelry">Jewelry</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Luxury Women’s Edit</h1>
+    <p>Soft • Feminine • Powerful</p>
+    <button>Shop Now</button>
+  </div>
+</div>
+
+<!-- CLOTHING -->
+<section id="clothing">
+<h2>Clothing</h2>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+    <h4>Satin Midi Dress</h4>
+    <div class="price">₹4,999</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1520975867597-0dba97c3c71e">
+    <h4>Blush Bow Top</h4>
+    <div class="price">₹2,799</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+    <h4>Pleated Skirt</h4>
+    <div class="price">₹3,499</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<!-- HANDBAGS -->
+<section id="bags">
+<h2>Handbags</h2>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e">
+    <h4>Quilted Chain Bag</h4>
+    <div class="price">₹8,499</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3">
+    <h4>Mini Leather Tote</h4>
+    <div class="price">₹6,999</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<!-- MAKEUP -->
+<section id="makeup">
+<h2>Makeup</h2>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+    <h4>Luxury Eyeshadow Palette</h4>
+    <div class="price">₹3,299</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+    <h4>Matte Lipstick</h4>
+    <div class="price">₹1,899</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<!-- HEELS -->
+<section id="heels">
+<h2>Heels</h2>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+    <h4>Strap Heels</h4>
+    <div class="price">₹5,999</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <h4>Nude Pumps</h4>
+    <div class="price">₹4,799</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<!-- JEWELRY -->
+<section id="jewelry">
+<h2>Jewelry</h2>
+<div class="grid">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1602526219049-7f26d1a07e2b">
+    <h4>Pearl Earrings</h4>
+    <div class="price">₹2,299</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1603575448365-3f19c29d30e6">
+    <h4>Gold Necklace</h4>
+    <div class="price">₹3,999</div>
+    <button onclick="add()">Add to Cart</button>
+  </div>
+</div>
+</section>
+
+<footer>
+© 2026 SAVANA – Women Only Luxury Store
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+function add(){
+  alert("Added to cart 💖");
+}
+</script>
+
+</body>
+</html>
